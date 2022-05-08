@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,22 @@ namespace NET_ININ4_PR2._2_z2
             InitializeComponent();
             DataContext = new Dane();
         }
-        class Dane
+        class Dane : INotifyPropertyChanged
         {
+            public event PropertyChangedEventHandler PropertyChanged;
+            string imię = "Nemo";
+            public string Imię {
+                get => imię;
+                set {
+                    imię = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Imię"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Format"));
+                }
+            }
+            public string Format
+            {
+                get { return $"Podane imię to {Imię}."; }
+            }
             public string JakiśNapis { get; set; } = "wartość początkowa";
             //tablica jednowymiarowa - jako-tako użyteczna z ListBoxem, praktycznie bezużyteczna z DataGridem
             public string[] JakaśTablica { get; set; } = new string[]
