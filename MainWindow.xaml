@@ -73,5 +73,26 @@
                 Mode=OneWayToSource
             }"
             />
+
+        <DataGrid
+            Grid.Row="5"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            ItemsSource="{Binding Path=JakaśTablica5}"
+            />
+        <ListBox
+            Grid.Row="7"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            ItemsSource="{Binding Path=JakaśTablica5}"
+            >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock
+                        Text="{Binding Path=Imię}"
+                        />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
