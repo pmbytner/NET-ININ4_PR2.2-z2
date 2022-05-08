@@ -23,6 +23,11 @@ namespace NET_ININ4_PR2._2_z2
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Dane();
+        }
+        class Dane
+        {
+            public string JakiśNapis { get; set; } = "wartość początkowa";
         }
     }
 }
