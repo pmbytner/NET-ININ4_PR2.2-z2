@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,13 +30,22 @@ namespace NET_ININ4_PR2._2_z2
         class Dane : INotifyPropertyChanged
         {
             public event PropertyChangedEventHandler PropertyChanged;
+            static Dictionary<string, string[]> PowiązaneWłaściwości = new Dictionary<string, string[]>
+            {
+                ["Imię"] = new string[] {"Format"}
+            };
+            private void OnPropertyChanged([CallerMemberName] string nazwa = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nazwa));
+                foreach (string powiązana in PowiązaneWłaściwości[nazwa])
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(powiązana));
+            }
             string imię = "Nemo";
             public string Imię {
                 get => imię;
                 set {
                     imię = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Imię"));
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Format"));
+                    OnPropertyChanged();
                 }
             }
             public string Format
