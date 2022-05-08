@@ -49,6 +49,29 @@
             />
 
         <DataGrid
+            Grid.Row="3"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            DataContext="{StaticResource daneXml}"
+            ItemsSource="{Binding XPath=produkt}"
+            AutoGenerateColumns="False"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Header="Nazwa"
+                    Binding="{Binding XPath=nazwa}"
+                    />
+                <DataGridTextColumn
+                    Header="Cena"
+                    Binding="{Binding XPath=cena}"
+                    />
+                <DataGridTextColumn
+                    Header="Kraj Pochodzenia"
+                    Binding="{Binding XPath=kraj_pochodzenia}"
+                    />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid
             Grid.Row="5"
             Grid.ColumnSpan="2"
             Grid.RowSpan="2"

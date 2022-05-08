@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<produkty>
+  <produkt>
+    <nazwa>Jabłko</nazwa>
+    <cena>2.99</cena>
+    <kraj_pochodzenia>Polska</kraj_pochodzenia>
+  </produkt>
+  <produkt>
+    <cena>3.99</cena>
+    <nazwa>Gruszka</nazwa>
+    <kraj_pochodzenia>Polska</kraj_pochodzenia>
+  </produkt>
+  <produkt>
+    <nazwa>Pomarańcz</nazwa>
+    <cena>4.99</cena>
+    <kraj_pochodzenia>Hiszpania</kraj_pochodzenia>
+  </produkt>
+  <produkt>
+    <nazwa>Awokadao</nazwa>
+    <cena>5.99</cena>
+    <kraj_pochodzenia>Meksyk</kraj_pochodzenia>
+  </produkt>
+  <produkt>
+    <nazwa>Banan</nazwa>
+    <cena>3.99</cena>
+    <kraj_pochodzenia>Algieria</kraj_pochodzenia>
+  </produkt>
+</produkty>
