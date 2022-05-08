@@ -53,7 +53,7 @@
             Grid.ColumnSpan="2"
             Grid.RowSpan="2"
             DataContext="{StaticResource daneXml}"
-            ItemsSource="{Binding XPath=produkt}"
+            ItemsSource="{Binding XPath=grupa/produkt}"
             AutoGenerateColumns="False"
             >
             <DataGrid.Columns>
@@ -68,6 +68,10 @@
                 <DataGridTextColumn
                     Header="Kraj Pochodzenia"
                     Binding="{Binding XPath=kraj_pochodzenia}"
+                    />
+                <DataGridTextColumn
+                    Header="Kategoria"
+                    Binding="{Binding XPath=../nazwa}"
                     />
             </DataGrid.Columns>
         </DataGrid>
